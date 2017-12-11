@@ -1,0 +1,58 @@
+/*Programmer: Lawrence Thomas
+CS 456 project Alpha: My project focuses on the calculator.
+This is the alpha version.*/
+
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+
+int main(int nNumberofArgs, char* pszArgs[])
+{ //beginging of main
+
+	int num1;
+	int num2;
+	char operandType; // for +,-,*, and /
+
+	cout << "Calculate two variables:" << endl;
+	cin >> num1 >> operandType >> num2;
+
+	// this will redisplay what the user entered w/the answer.
+	cout << num1 << " " << operandType << " " << num2 << " = ";
+
+	/*now we will calculate the values the user entered
+	but if it invalid it will give the user an error.*/
+	switch (operandType)
+	{ //beginning of switch class
+	case '+':
+		cout << num1 + num2;
+		break;
+
+	case '-':
+		cout << num1 - num2;
+		break;
+
+	case '*':
+	case 'x':
+	case 'X':
+		cout << num1 * num2;
+		break;
+
+	case '/':
+		cout << num1 / num2;
+		break;
+
+	default:
+		//this will displayed if there is an error
+		cout << "this is an invalided calculation";
+	} //end of switch class
+
+	cout << endl;
+
+	//this will stop the program so the user can see the result.
+	cout << " Press Enter to continue..." << endl;
+	cin.ignore(10, 'n');
+	cin.get();
+	return 0;
+
+} //end of main
